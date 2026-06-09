@@ -1,0 +1,383 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Menu | Chillup Beverage</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#f9f9fc",
+                    "on-tertiary-fixed": "#141d21",
+                    "surface-tint": "#27609d",
+                    "on-tertiary-fixed-variant": "#3f484d",
+                    "primary-fixed": "#d3e4ff",
+                    "tertiary-fixed": "#dbe4ea",
+                    "surface-dim": "#dadadc",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e5",
+                    "surface-container-high": "#e8e8ea",
+                    "surface": "#f9f9fc",
+                    "secondary-container": "#75f8b3",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#001c38",
+                    "on-primary-fixed-variant": "#004882",
+                    "secondary": "#006d43",
+                    "on-error": "#ffffff",
+                    "primary-container": "#004b87",
+                    "tertiary": "#2c3439",
+                    "surface-container": "#eeeef0",
+                    "on-background": "#1a1c1e",
+                    "on-surface-variant": "#424750",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e2e2e5",
+                    "background": "#f9f9fc",
+                    "inverse-primary": "#a3c9ff",
+                    "tertiary-fixed-dim": "#bfc8ce",
+                    "on-secondary-container": "#007147",
+                    "inverse-on-surface": "#f0f0f3",
+                    "on-secondary-fixed-variant": "#005232",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#59de9b",
+                    "secondary-fixed": "#78fbb6",
+                    "on-surface": "#1a1c1e",
+                    "tertiary-container": "#424b50",
+                    "inverse-surface": "#2f3133",
+                    "outline": "#727781",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#002111",
+                    "on-tertiary-container": "#b2bbc0",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f3f3f6",
+                    "outline-variant": "#c2c6d1",
+                    "primary-fixed-dim": "#a3c9ff",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#003461",
+                    "on-primary-container": "#8abcff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "lg": "48px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xl": "80px",
+                    "md": "24px"
+            },
+            "fontFamily": {
+                    "body-md": ["Hanken Grotesk"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "display-lg-mobile": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .card-float {
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .card-float:hover {
+        transform: translateY(-12px);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Header: TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary tracking-tight" href="#">Chillup Beverage</a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-xl">
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Home</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-secondary font-bold border-b-2 border-secondary pb-1" href="#">Menu</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">About</a>
+<a class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface p-base hover:bg-surface-container rounded-full transition-colors">shopping_cart</button>
+<button class="hidden md:block bg-primary text-on-primary font-label-md px-md py-base rounded-lg hover:opacity-80 transition-opacity hover:scale-105 hover:bg-primary-container transition-all duration-300">Shop Now</button>
+<button class="md:hidden material-symbols-outlined" onclick="toggleMenu()">menu</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Section 2: Page Hero -->
+<section class="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A lush tropical scene featuring macro photography of vibrant green palm leaves and exotic flowers. The image is brightly lit with high-key natural sunlight, creating a refreshing and airy atmosphere. Water droplets glisten on the foliage, evoking the clarity and coolness of a tropical beverage experience. The composition is spacious and minimalist, aligning with a premium modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2G7KRDv3UeaxqPZt4lALnvaobbFASnW-_e0qsT44dbFYSrax0bKEyZLVfuNxT3aO4-Ay1nfMj9LRpB4kqMS-qvvr1S3y7S4kKDe9ADUCZ-zY1ks-Da6K_nb7RG2AUHNorPCfEcRE6HQRlfee6OW1oMd6uczIFpgaKuk8YuHzVC0v7vN27q9GJQcaV8d5JB9oiEKD2IXCCKRC4HaF2MPXMOa90SnlBZ9cBor0uwsLqcsbTtADsGVvACUbDyKHuRE7YQpTC_zdep64">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
+</div>
+<div class="relative z-10 text-center px-gutter">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary drop-shadow-sm">Our Menu</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-xs max-w-xl mx-auto">Sip into the heart of Sri Lanka with our craft-curated tropical refreshments.</p>
+</div>
+</section>
+<!-- Section 3: Category Filters -->
+<section class="sticky top-16 z-40 bg-background/90 backdrop-blur-md py-md shadow-sm">
+<div class="max-w-container-max mx-auto px-gutter overflow-x-auto no-scrollbar">
+<div class="flex md:justify-center items-center gap-sm whitespace-nowrap min-w-max">
+<button class="filter-pill active px-md py-base rounded-full font-label-md text-on-secondary-container bg-secondary-container border border-secondary transition-all" onclick="filterMenu('all')">All Drinks</button>
+<button class="filter-pill px-md py-base rounded-full font-label-md text-on-surface-variant bg-surface-container-low hover:bg-surface-variant transition-all" onclick="filterMenu('fresh-juices')">Fresh Juices</button>
+<button class="filter-pill px-md py-base rounded-full font-label-md text-on-surface-variant bg-surface-container-low hover:bg-surface-variant transition-all" onclick="filterMenu('smoothies')">Smoothies</button>
+<button class="filter-pill px-md py-base rounded-full font-label-md text-on-surface-variant bg-surface-container-low hover:bg-surface-variant transition-all" onclick="filterMenu('coolers')">Coolers</button>
+<button class="filter-pill px-md py-base rounded-full font-label-md text-on-surface-variant bg-surface-container-low hover:bg-surface-variant transition-all" onclick="filterMenu('signature')">Signature Drinks</button>
+</div>
+</div>
+</section>
+<!-- Section 4: Menu Grid -->
+<section class="py-xl max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl" id="menu-grid">
+<!-- Fresh Juices -->
+<div class="menu-item group" data-category="fresh-juices">
+<div class="glass card-float rounded-xl p-base flex flex-col h-full border border-outline-variant/30 hover:border-secondary transition-colors hover:scale-105 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 mb-md overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300" data-alt="A macro shot of a tall glass filled with vibrant, fresh mango juice. The drink is a deep, warm orange color and features condensation droplets on the exterior of the chilled glass. Garnished with a slice of ripe mango and a mint leaf, set against a bright, airy, high-key white background. The style is minimalist and clean, emphasizing refreshment and premium quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE4SXVQphCSsaerBxJysGkX1eooxo7J30KemavermRspzhpIL0NX9lHCchItZBdB7WD7Zd2VlZpQPE_w3KSpqy5BE-OfzlFLXP1oia2tV37OkVJ3tWF9XUq5DDQb87oamE7QJzLhRxrMc6CIT3PmeGoEGbRfIvZeuI_vipQ2UhRp6JYQShEmh7fEATlgTZNCY2z59MNP_77xSf-rdbwBbIYrkqKacfNozVgXP3N5wxOZqD89xf0iJgqGAr5uZ6WrSjQo-ucQP6cEQ">
+</div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-on-surface">Mango Juice</h3>
+<span class="font-label-md text-secondary">LKR 450</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-base flex-grow">Freshly squeezed tropical Sri Lankan mangoes, chilled to perfection.</p>
+<div class="flex gap-xs mb-md">
+<span class="bg-secondary/10 text-secondary text-[10px] px-sm py-xs rounded-full font-bold uppercase tracking-tighter">Pure Fruit</span>
+</div>
+<button class="w-full py-base bg-primary text-on-primary font-label-md rounded-lg flex items-center justify-center gap-xs hover:bg-primary-container transition-colors hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<div class="menu-item group" data-category="fresh-juices">
+<div class="glass card-float rounded-xl p-base flex flex-col h-full border border-outline-variant/30 hover:border-secondary transition-colors hover:scale-105 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 mb-md overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300" data-alt="A refreshing glass of freshly squeezed orange juice placed on a minimalist white table. The juice is bright citrus orange with visible pulp, and the glass has a frosty texture indicating it is very cold. Soft morning sunlight filters through, creating subtle shadows and highlights. The aesthetic is modern and premium, suggesting a luxurious breakfast or brunch experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoU750fW1bazHTk6D4j1FzvGxBydYVd1of3vZnefZM3oWGD_FQUXqcHoiFILH160Wqkq_Uz08EJwtzjb1oyinXxCRBfLHXzdnzcvq7BsVaNI-9EO8rer6aOnNv5yVM4SDOP6_zgI5QeOcaZl2y5Tn8zp5Sdq2M5-rCiyIUIuT4avqHK7GUS4kR-79UE41--2rnBEkTZK1Fa5xpxnCy7Rt7X0Ktta5lSySY_82zzpGdnYKoCQ0bYgH-A4uG0qRpGlJ63QpS3u3nBNc">
+</div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-on-surface">Orange Blast</h3>
+<span class="font-label-md text-secondary">LKR 450</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-base flex-grow">A citrus explosion made with locally sourced seasonal oranges.</p>
+<button class="w-full py-base bg-primary text-on-primary font-label-md rounded-lg flex items-center justify-center gap-xs hover:bg-primary-container transition-colors hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Smoothies -->
+<div class="menu-item group" data-category="smoothies">
+<div class="glass card-float rounded-xl p-base flex flex-col h-full border border-outline-variant/30 hover:border-secondary transition-colors hover:scale-105 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 mb-md overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300" data-alt="A thick, creamy strawberry smoothie in a tall glass with a vibrant pink hue. Topped with fresh strawberry halves and a sprig of mint. The background is a clean, bright, and airy kitchen setting with high-key lighting. The overall mood is healthy, energetic, and premium, using a soft pastel color palette with vibrant pink accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBbU2EC7iVXoK_Mlm3Zf9bxaSmGrvjjjxUuY420Q6Gk5SAy3wB8HoESZJrBgfsC9zDGgHYYmNQkK2tBbxz4VZpoeGtZFZHqYF3dEWUddDZRrMUE04mb2S2Gmx9nCsgltzMlgP1NOcbI-hN2zNrWJnRhJ2zU1g2zi5VPQwAxM-ZczwWoVz58HCfuwrUVIqYrvdf7aWNvYm15Ck94CatF4pyz1do-5923Yq7zecIVQttq4JcoyCYJN2O42CXCgPYGhKy0rCD_18Zbjw">
+</div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-on-surface">Strawberry Smoothie</h3>
+<span class="font-label-md text-secondary">LKR 650</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-base flex-grow">Luscious berries blended with creamy Greek yogurt and honey.</p>
+<button class="w-full py-base bg-primary text-on-primary font-label-md rounded-lg flex items-center justify-center gap-xs hover:bg-primary-container transition-colors hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Coolers -->
+<div class="menu-item group" data-category="coolers">
+<div class="glass card-float rounded-xl p-base flex flex-col h-full border border-outline-variant/30 hover:border-secondary transition-colors hover:scale-105 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 mb-md overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300" data-alt="A crystal clear cooler beverage with floating mint leaves and lime slices in a highball glass. The drink is effervescent with visible bubbles and plenty of ice cubes. The lighting is crisp and bright, mimicking a sun-drenched afternoon. The setting is a luxury outdoor terrace with a hint of lush greenery in the blurred background. Modern, minimalist, and icy cool aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ3HTwyWHF0kI5GUIY3ltB_GxWiX4ksVdQuPGCqMlqCZo_-giJo4Ac880BIcpi8p_rCQmZSA28z4FfAlScaFalYjEiawUbqalNyzH73cUHf3fwg8VRVGA3AT5i19NWoitGOrUYSdhizQl3oTBaMRmjGvqvgs0xfVQ4LVF0Y_cmYE9V6BcTwxVTCk2vwWxD7cqi8fG26JlNxL1OYAMfZ9bgW5ygloZP9WiQTefN2gkVFtEJTsjmxV5iiw1qJ6jrVFxiegoqq7gjo78">
+</div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-on-surface">Lemon Mint Cooler</h3>
+<span class="font-label-md text-secondary">LKR 400</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-base flex-grow">The ultimate thirst quencher with fresh mint and local lime.</p>
+<button class="w-full py-base bg-primary text-on-primary font-label-md rounded-lg flex items-center justify-center gap-xs hover:bg-primary-container transition-colors hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- More items... -->
+<div class="menu-item group" data-category="smoothies">
+<div class="glass card-float rounded-xl p-base flex flex-col h-full border border-outline-variant/30 hover:border-secondary transition-colors hover:scale-105 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 mb-md overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300" data-alt="A silky avocado cream smoothie served in a modern glass. The color is a vibrant light green, reflecting the freshness of the avocado. The lighting is soft and ambient, highlighting the smooth texture of the drink. A minimalist aesthetic with clean lines and a premium, healthy vibe. High-key light-mode background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzTxO51ax3hCX_379z4tsSHtGegZy6Y2pNaGLkBIZOKztzgB3UieFdnCDGvUgrpBE56MPXLC-8q_SntKzK61dcB7oD9yU_zdQN1azNVgPFNuc4xGSdL55AWr5Z9rFReC8cUlQTBZIg3zcGYkRLlWy-Bsi_3DrxLbwjFm-6w5-m0gjllHphHtwIVUkhaTU3iOoDSO-RFxH3Hw62kjGQdOx35Mpl6mmbAdF85CVDUxudzBg1uGgzoc3jkkTazxvG6vSrcdPeYvo9R0w">
+</div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-on-surface">Avocado Cream</h3>
+<span class="font-label-md text-secondary">LKR 750</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-base flex-grow">Velvety Jaffna avocados blended with condensed milk and ice.</p>
+<button class="w-full py-base bg-primary text-on-primary font-label-md rounded-lg flex items-center justify-center gap-xs hover:bg-primary-container transition-colors hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<div class="menu-item group" data-category="signature">
+<div class="glass card-float rounded-xl p-base flex flex-col h-full border border-outline-variant/30 hover:border-secondary transition-colors hover:scale-105 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 mb-md overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300" data-alt="A deep ruby-red hibiscus iced tea, served in a sophisticated tall glass. It is garnished with an edible flower and a cinnamon stick. The drink looks sophisticated and elegant, reflecting a signature craft beverage. The lighting is high-end, using soft glows and high-key brightness to emphasize its premium quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM4Jv3HkJyzLVgz1ZdUe0Ipr4AVqOgtCI4NP4OX8hT_zRs-mS6gJ8qfwi5m0J1E6ytaUlyPHPYZb1nE3pmhd-hyYgt0IRhsFA3evcx6VR4TzYM--mfV4y_MyEmhgTE8MjHymPWvtpe5if0sQW0KBlP8jREoJ1O1kP0DalWvC1iLU8XhgZG88dA-z37cKYu7WNbZJnrmAUvWKsDEFvtP6poviQ-iUSOwMxxqmwl5LvElU_XM0Kg5Lt-mI4dLzanXTFdZV3zBnepCz8">
+</div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-on-surface">Iced Hibiscus</h3>
+<span class="font-label-md text-secondary">LKR 550</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-base flex-grow">Our signature ruby-red floral infusion with a hint of spice.</p>
+<button class="w-full py-base bg-primary text-on-primary font-label-md rounded-lg flex items-center justify-center gap-xs hover:bg-primary-container transition-colors hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<div class="menu-item group" data-category="coolers">
+<div class="glass card-float rounded-xl p-base flex flex-col h-full border border-outline-variant/30 hover:border-secondary transition-colors hover:scale-105 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 mb-md overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300" data-alt="A sparkling ginger fizz cooler in a chilled glass. Bubbles are racing to the top, and thin slices of fresh ginger and lemon are visible inside. The atmosphere is energetic and refreshing. High-key photography style with a focus on light and transparency, creating an icy, chilled feeling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC5Rn0fefVFpyen3F6kW8ERQfI1q3DKLRGp0_djvNd6dQWfhB6l8Am8pvdDyLcvdk62SluyQ2ZKMde7O1Hhzmaa-Ri0PFFqO8FD07PM3V1GzNnRAnbV110eOFk4NIOtrYXWWShqIHCliLV1F7KM8d-x7aZtX_IE-VpLHPZBXjl1xpIJ3OJ44wmCzOGrzaOVjstdes-BhwD8aXXPXbSDpLzNXApjoW-GbZrb_QHmJKRyVFZgCweFIGCTSOcU5-yUxpJ2Sqy6emfX28">
+</div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-on-surface">Ginger Fizz</h3>
+<span class="font-label-md text-secondary">LKR 420</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-base flex-grow">Local ginger root extract, sparkling water, and raw cane sugar.</p>
+<button class="w-full py-base bg-primary text-on-primary font-label-md rounded-lg flex items-center justify-center gap-xs hover:bg-primary-container transition-colors hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<div class="menu-item group" data-category="fresh-juices">
+<div class="glass card-float rounded-xl p-base flex flex-col h-full border border-outline-variant/30 hover:border-secondary transition-colors hover:scale-105 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 mb-md overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-110 duration-300" data-alt="Freshly squeezed pineapple juice with a vibrant yellow color. A thick slice of pineapple sits on the rim of the glass. The background features lush, out-of-focus tropical greenery. The drink is well-lit, appearing juicy and full of life. Minimalist and premium design aesthetic with a light and airy feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj5XAc-1LNlzDj1ID4eGGXSJrW67SKPSXjRTNm4B1G0-qh3HFVvRB6tnrVS8AQxoTbk501aBZ4D0DRx_bhfbvIzgvgopBHqC2QSqpM-5AmNOqRhcGCv-NGP9NFeOR7ygrRSLyN34yyTGBcPQp8YuaGvuJQq53tMJZ9nVfz1IH9lTmizl6xRP6IJu_Ol4U-uGh3mrgy1ck7ueaPRCSNsDb7CSpa1e2JrxqcAYZExtMxpMIK6gZSbkPwpu6rSJEozAvyaxd3aHPl7DM">
+</div>
+<div class="flex justify-between items-start mb-xs">
+<h3 class="font-headline-md text-on-surface">Pineapple Passion</h3>
+<span class="font-label-md text-secondary">LKR 480</span>
+</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-base flex-grow">Pure passion fruit mixed with golden pineapple juice.</p>
+<button class="w-full py-base bg-primary text-on-primary font-label-md rounded-lg flex items-center justify-center gap-xs hover:bg-primary-container transition-colors hover:scale-105 transition-all duration-300">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full py-md px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-center gap-base max-w-container-max mx-auto">
+<div class="text-center md:text-left">
+<span class="font-headline-lg text-headline-lg text-primary block mb-xs">Chillup Beverage</span>
+<p class="font-label-md text-label-md text-on-surface-variant">© 2024 Chillup Beverage. Crafted in Sri Lanka.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Sustainability</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary underline transition-all" href="#">Careers</a>
+</div>
+<div class="flex gap-base mt-md md:mt-0">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-secondary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-secondary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const pills = document.querySelectorAll('.filter-pill');
+
+            pills.forEach(pill => {
+                pill.classList.remove('active', 'bg-secondary-container', 'text-on-secondary-container', 'border-secondary');
+                pill.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+            });
+
+            const activePill = event.currentTarget;
+            activePill.classList.add('active', 'bg-secondary-container', 'text-on-secondary-container', 'border-secondary');
+            activePill.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.classList.remove('hidden');
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                }, 200);
+            });
+        }
+
+        function toggleMenu() {
+            // Simplified mobile menu toggle for demo
+            alert('Mobile navigation would open here.');
+        }
+
+        // Add reveal animations on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.remove('shadow-md', 'py-2');
+                header.classList.add('py-4');
+            }
+        });
+    </script>
+
+
+</body></html>
